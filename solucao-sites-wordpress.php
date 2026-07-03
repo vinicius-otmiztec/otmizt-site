@@ -23,14 +23,14 @@ include 'partials/header.php';
         </div>
       </div>
       <div class="page-hero__media" data-reveal>
-        <div class="hero-chart">
+        <div class="hero-chart hero-chart--wordpress">
           <div class="hero-chart__dots"></div>
           <div class="hero-chart__bars">
-            <span style="--h:45%"></span>
-            <span style="--h:70%"></span>
-            <span style="--h:35%"></span>
-            <span style="--h:85%"></span>
-            <span style="--h:55%"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
           <button class="hero-chart__play" type="button" aria-label="Reproduzir vídeo"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#5b7cfa"/><path d="M10 8l6 4-6 4z" fill="#fff"/></svg></button>
         </div>

@@ -27,8 +27,8 @@ include 'partials/header.php';
     <div class="container">
       <p class="eyebrow" data-reveal>Pessoas</p>
       <h2 class="section-title" data-split>Conheça nossa comunidade</h2>
-      <h3 style="margin:48px 0 24px;font-size:1.1rem;" data-reveal>Campeões da comunidade</h3>
-      <div class="card-grid" style="grid-template-columns:repeat(5,1fr);">
+      <h3 class="subsection-title" data-reveal>Campeões da comunidade</h3>
+      <div class="card-grid card-grid--5">
         <div class="avatar-card" data-reveal>
           <div class="avatar-card__pic">LI</div>
           <strong>Membro 1</strong>
@@ -55,8 +55,8 @@ include 'partials/header.php';
           <span>Champion</span>
         </div>
       </div>
-      <h3 style="margin:48px 0 24px;font-size:1.1rem;" data-reveal>Especialistas</h3>
-      <div class="card-grid" style="grid-template-columns:repeat(5,1fr);">
+      <h3 class="subsection-title" data-reveal>Especialistas</h3>
+      <div class="card-grid card-grid--5">
         <div class="avatar-card" data-reveal>
           <div class="avatar-card__pic">LI</div>
           <strong>Especialista 1</strong>
@@ -78,8 +78,8 @@ include 'partials/header.php';
           <span>Expert</span>
         </div>
       </div>
-      <h3 style="margin:48px 0 24px;font-size:1.1rem;" data-reveal>Embaixadores</h3>
-      <div class="card-grid" style="grid-template-columns:repeat(5,1fr);">
+      <h3 class="subsection-title" data-reveal>Embaixadores</h3>
+      <div class="card-grid card-grid--5">
         <div class="avatar-card" data-reveal>
           <div class="avatar-card__pic">LI</div>
           <strong>Embaixador 1</strong>

@@ -150,7 +150,7 @@ include 'partials/header.php';
         <p class="eyebrow" data-reveal>Quem somos</p>
         <h2 class="section-title" data-split>Um só time por trás de toda a sua tecnologia</h2>
         <p data-reveal>A OTMiz Tech é uma equipe de desenvolvimento que assume sistemas, sites, integrações e infraestrutura como um único parceiro — sem terceirizar pedaços do seu projeto entre fornecedores diferentes.</p>
-        <div class="hero__actions" data-reveal style="margin-top:24px;">
+        <div class="hero__actions" data-reveal>
           <a href="sobre.php" class="btn btn--ghost">Conhecer a OTMiz Tech</a>
         </div>
       </div>
@@ -165,7 +165,7 @@ include 'partials/header.php';
     <div class="container">
       <p class="eyebrow" data-reveal>Soluções</p>
       <h2 class="section-title" data-split>O que fazemos</h2>
-      <div class="card-grid" style="margin-top:48px;">
+      <div class="card-grid">
         <a href="solucao-desenvolvimento.php" class="info-card" data-reveal>
           <span class="info-card__tag">Solução</span>
           <h3>Desenvolvimento sob medida</h3>
@@ -239,7 +239,7 @@ include 'partials/header.php';
 
   <!-- STATS / COMUNIDADE -->
   <section class="stats container">
-    <p class="eyebrow" data-reveal style="grid-column:1/-1;">Confiado por quem já opera com a gente</p>
+    <p class="eyebrow" data-reveal>Confiado por quem já opera com a gente</p>
     <div class="stat" data-reveal>
       <span class="stat__number" data-count="15" data-suffix="+">0</span>
       <span class="stat__label">lorem ipsum dolor</span>

@@ -358,6 +358,7 @@ h1,h2,h3{ font-family: var(--font-head); margin:0; }
   gap: 32px;
   position: relative;
 }
+.stats .eyebrow{ grid-column: 1 / -1; }
 .stat{ text-align:center; }
 .stat__number{
   display:block;
@@ -539,6 +540,22 @@ h1,h2,h3{ font-family: var(--font-head); margin:0; }
 }
 .footer__copy{ color: var(--text-dim); font-size:.8rem; margin:0; }
 
+/* ---------- whatsapp floating button ---------- */
+.whatsapp-float{
+  position: fixed;
+  right: 24px; bottom: 24px;
+  width: 58px; height: 58px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius: 999px;
+  background: #25D366;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  z-index: 98;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.whatsapp-float:hover{ transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.4); }
+.whatsapp-float svg{ width: 30px; height: 30px; }
+
 /* ---------- page hero (product/institutional pages) ---------- */
 .page-hero{
   padding: 180px 0 90px;
@@ -613,6 +630,37 @@ h1,h2,h3{ font-family: var(--font-head); margin:0; }
   50%{ transform:translate(-50%,-50%) scale(1.08); }
 }
 
+/* hero-chart bar heights per página de solução */
+.hero-chart--dev .hero-chart__bars span:nth-child(1){ --h:30%; }
+.hero-chart--dev .hero-chart__bars span:nth-child(2){ --h:50%; }
+.hero-chart--dev .hero-chart__bars span:nth-child(3){ --h:65%; }
+.hero-chart--dev .hero-chart__bars span:nth-child(4){ --h:45%; }
+.hero-chart--dev .hero-chart__bars span:nth-child(5){ --h:90%; }
+
+.hero-chart--infra .hero-chart__bars span:nth-child(1){ --h:90%; }
+.hero-chart--infra .hero-chart__bars span:nth-child(2){ --h:55%; }
+.hero-chart--infra .hero-chart__bars span:nth-child(3){ --h:70%; }
+.hero-chart--infra .hero-chart__bars span:nth-child(4){ --h:40%; }
+.hero-chart--infra .hero-chart__bars span:nth-child(5){ --h:60%; }
+
+.hero-chart--integracoes .hero-chart__bars span:nth-child(1){ --h:60%; }
+.hero-chart--integracoes .hero-chart__bars span:nth-child(2){ --h:40%; }
+.hero-chart--integracoes .hero-chart__bars span:nth-child(3){ --h:80%; }
+.hero-chart--integracoes .hero-chart__bars span:nth-child(4){ --h:50%; }
+.hero-chart--integracoes .hero-chart__bars span:nth-child(5){ --h:70%; }
+
+.hero-chart--suporte .hero-chart__bars span:nth-child(1){ --h:50%; }
+.hero-chart--suporte .hero-chart__bars span:nth-child(2){ --h:65%; }
+.hero-chart--suporte .hero-chart__bars span:nth-child(3){ --h:45%; }
+.hero-chart--suporte .hero-chart__bars span:nth-child(4){ --h:60%; }
+.hero-chart--suporte .hero-chart__bars span:nth-child(5){ --h:80%; }
+
+.hero-chart--wordpress .hero-chart__bars span:nth-child(1){ --h:45%; }
+.hero-chart--wordpress .hero-chart__bars span:nth-child(2){ --h:70%; }
+.hero-chart--wordpress .hero-chart__bars span:nth-child(3){ --h:35%; }
+.hero-chart--wordpress .hero-chart__bars span:nth-child(4){ --h:85%; }
+.hero-chart--wordpress .hero-chart__bars span:nth-child(5){ --h:55%; }
+
 /* ---------- trusted-by strip ---------- */
 .trusted-by{ padding: 48px 0; border-bottom: 1px solid var(--border); }
 .trusted-by p{
@@ -634,6 +682,7 @@ h1,h2,h3{ font-family: var(--font-head); margin:0; }
 .feature-block--reverse .feature-block__inner{ direction: rtl; }
 .feature-block--reverse .feature-block__inner > *{ direction: ltr; }
 .feature-block__copy p{ color: var(--text-dim); margin: 18px 0 0; max-width: 46ch; }
+.feature-block__copy .hero__actions{ margin-top: 24px; }
 .feature-block__media{
   background: var(--surface);
   border: 1px solid var(--border);
@@ -683,6 +732,8 @@ h1,h2,h3{ font-family: var(--font-head); margin:0; }
   display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
 }
 .card-grid--2{ grid-template-columns: repeat(2, 1fr); }
+.card-grid--5{ grid-template-columns: repeat(5, 1fr); }
+.subsection-title{ margin: 48px 0 24px; font-size: 1.1rem; }
 .info-card{
   background: var(--surface);
   border: 1px solid var(--border);
@@ -758,4 +809,9 @@ h1,h2,h3{ font-family: var(--font-head); margin:0; }
   .nav.is-open .mega-menu.is-open{ max-height: 2000px; padding-top: 16px; }
   .mega-menu__inner{ display:flex; flex-direction:column; gap:24px; padding: 0; }
   .mega-menu__groups{ grid-template-columns: 1fr; gap:24px; }
+
+  .whatsapp-float{ right: 16px; bottom: 16px; width: 50px; height: 50px; }
+  .whatsapp-float svg{ width: 26px; height: 26px; }
+
+  .cases__pin{ min-height:0; padding: 60px 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }

@@ -53,7 +53,6 @@
       <a href="blog.php">Blog</a>
       <a href="clientes.php">Clientes</a>
       <a href="recursos.php">Recursos</a>
-      <a href="startups.php">Startups</a>
       <a href="comunidade.php">Comunidade</a>
     </nav>
 
