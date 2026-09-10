@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Otmiz Tech</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <link href="assets/img/favicon-black.png" rel="icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <!-- Modal -->
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        <div class="modal-body p-0">
+          <video id="videoPlayer" width="100%" controls>
+            <source src="assets/mp4/video.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo HTML5.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas: Agendar apresentação (Inovação > Explorar) -->
+  <div class="offcanvas offcanvas-end explorar-offcanvas" tabindex="-1" id="offcanvasExplorar" aria-labelledby="offcanvasExplorarLabel">
+    <div class="offcanvas-header">
+      <div>
+        <h5 class="offcanvas-title" id="offcanvasExplorarLabel">Agende uma apresentação</h5>
+        <p class="explorar-solucao-nome mb-0" id="offcanvasSolucaoNome">Solução</p>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <form id="explorarForm" novalidate>
+        <input type="hidden" name="solucao" id="explorarSolucaoInput">
+
+        <div class="mb-3">
+          <label for="explorarNome" class="form-label">Nome*</label>
+          <input type="text" class="form-control" id="explorarNome" name="nome" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="explorarEmpresa" class="form-label">Empresa*</label>
+          <input type="text" class="form-control" id="explorarEmpresa" name="empresa" required>
+        </div>
+
+        <div class="mb-4">
+          <label for="explorarEmail" class="form-label">E-mail*</label>
+          <input type="email" class="form-control" id="explorarEmail" name="email" required>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label">Escolha o dia e o horário*</label>
+          <div id="explorarCalendar" class="explorar-calendar"></div>
+          <input type="hidden" name="data_hora" id="explorarDataHora">
+          <div class="form-text text-danger mt-2 d-none" id="explorarDataHoraError">Selecione um dia e horário.</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Agendar Apresentação</button>
+      </form>
+    </div>
+  </div>
+
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/logo-white.png" alt="">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="solucoes.html">Nossas Soluções</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section id="hero-teste" class="hero-teste section dark-background">
+
+      <div class="hero-teste-background">
+        <video id="bgVideo" muted loop playsinline preload="none" poster="assets/img/poster.png">
+          <source data-src="assets/mp4/video.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="row hero-teste-read-line align-items-center justify-content-center text-center">
+          <div class="col-lg-8">
+            <div class="hero-teste-content">
+              <h1>Sua atenção foi pega aqui!</h1>
+              <p>Depois de ver um pouco o vídeo sem som, você leu rapidamente o título principal e agora está bem
+                concentrado lendo este texto.</p>
+              <div class="hero-teste-actions">
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#videoModal">
+                  <i class="bi bi-play-circle"></i>
+                  <span>Assista ao Vídeo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section light-background">
+
+      <div class="container" data-aos="zoom-in">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 5,
+                  "spaceBetween": 120
+                },
+                "1200": {
+                  "slidesPerView": 5,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Clients Section -->
+
+    <!-- About Section -->
+    <section id="sobre" class="sobre section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-center">
+          <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
+            <div class="sobre-image">
+              <img src="https://placehold.co/450x580" alt="" class="img-fluid main-image">
+            </div>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300">
+            <div class="sobre-content">
+              <h2>Título</h2>
+
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                explicabo.</p>
+
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                explicabo.</p>
+
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                explicabo.</p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="sobre-content">
+              <h2>Título</h2>
+
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                explicabo.</p>
+
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                explicabo.</p>
+
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                explicabo.</p>
+
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200">
+            <div class="sobre-image">
+              <img src="https://placehold.co/540x700" alt="" class="img-fluid main-image">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- /About Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <img src="assets/img/bg/bg-8.webp" alt="">
+
+      <div class="container">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-9 text-center text-xl-start">
+            <h3>Chamada para ação</h3>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+              laborum.</p>
+          </div>
+          <div class="col-xl-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#">Chamada para ação</a>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+    <!-- Work Process Section -->
+    <section id="work-process" class="work-process section">
+
+     <!-- Section Title -->
+       <div class="container section-title" data-aos="fade-up">
+        <h2>Processos</h2>
+        <h4>Evolução de forma sustentável</h4>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="steps-item">
+              <div class="steps-image">
+                <img src="https://placehold.co/350x280" alt="Step 1" class="img-fluid" loading="lazy">
+              </div>
+              <div class="steps-content">
+                <div class="steps-number">01</div>
+                <h3>Título</h3>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+                  magni dolores eos qui ratione.</p>
+              </div>
+            </div><!-- End Steps Item -->
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="steps-item">
+              <div class="steps-image">
+                <img src="https://placehold.co/350x280" alt="Step 2" class="img-fluid" loading="lazy">
+              </div>
+              <div class="steps-content">
+                <div class="steps-number">02</div>
+                <h3>Título</h3>
+                <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+                  aliquid ex ea commodi consequatur.</p>
+              </div>
+            </div><!-- End Steps Item -->
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="steps-item">
+              <div class="steps-image">
+                <img src="https://placehold.co/350x280" alt="Step 3" class="img-fluid" loading="lazy">
+              </div>
+              <div class="steps-content">
+                <div class="steps-number">03</div>
+                <h3>Título</h3>
+                <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est
+                  eligendi optio cumque nihil.</p>
+              </div>
+            </div><!-- End Steps Item -->
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Work Process Section -->
+
+    <!-- Mini player flutuante -->
+    <div id="miniPlayer" class="mini-player shadow-lg">
+      <video id="miniVideo" muted loop playsinline controls>
+        <source src="assets/mp4/video.mp4" type="video/mp4">
+      </video>
+      <button id="closeMiniPlayer" class="btn-close btn-close-white"></button>
+    </div>
+
+    <section id="servicos" class="servicos section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Inovação</h2>
+        <h4>Conheça Nossas Soluções</h4>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-cash-coin"></i>
+              </div>
+              <h3>CRM de Cobrança</h3>
+              <p>Régua de cobrança automatizada com envio por WhatsApp, negociação de dívidas e acompanhamento de recebíveis em tempo real. Menos planilha, mais previsibilidade de caixa.</p>
+              <a href="#" class="read-more">Explorar<i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-diagram-3"></i>
+              </div>
+              <h3>Hub Industrial</h3>
+              <p>Uma central única para compras, gestão de pessoas, ferramentas e ativos da sua indústria, com controle de acesso por perfil e histórico completo de movimentações.</p>
+              <a href="#" class="read-more">Explorar<i class="bi bi-arrow-right"></i></a>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-capsule"></i>
+              </div>
+              <h3>Solução para Farmácia</h3>
+              <p>Da prescrição digital à dispensação assistida: integração com prescritores, farmacêutico remoto sob demanda e rastreabilidade completa, do pedido até a entrega ao paciente.</p>
+              <a href="#" class="read-more">Explorar<i class="bi bi-arrow-right"></i></a>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-person-check"></i>
+              </div>
+              <h3>Sistema de Admissão</h3>
+              <p>Digitalize o processo admissional de ponta a ponta, com controle de acesso por perfil e suporte a múltiplas unidades. Menos papel, menos retrabalho, RH mais ágil.</p>
+              <a href="#" class="read-more">Explorar<i class="bi bi-arrow-right"></i></a>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-receipt-cutoff"></i>
+              </div>
+              <h3>CRM de Faturamento</h3>
+              <p>Fechamento de faturamento centralizado, conciliação automática com parceiros e emissão de relatórios por cliente. Visibilidade total do financeiro, sem planilha paralela.</p>
+              <a href="#" class="read-more">Explorar<i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-credit-card-2-front"></i>
+              </div>
+              <h3>CRM de Crédito</h3>
+              <p>Gestão do funil de crédito de ponta a ponta, com regras de negócio configuráveis e integração com os sistemas da sua operação. Decisão mais rápida, processo mais rastreável.</p>
+              <a href="#" class="read-more">Explorar<i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+    <!-- Consultation Section -->
+    <section id="consultation" class="consultation section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contato</h2>
+        <div><span>Fale Com</span> <span class="description-title">Nossa Equipe</span></div>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="cta-wrapper">
+          <div class="row align-items-center">
+            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+              <div class="cta-content">
+                <h2>Pronto para transformar seu negócio?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+                  mattis, pulvinar dapibus leo. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+              </div>
+            </div>
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
+              <div class="cta-form">
+                <h3>Agende uma consulta gratuita</h3>
+                <p>Preencha o formulário abaixo e nossa equipe entrará em contato com você em até 24 horas.</p>
+                <form action="#" method="post" class="php-email-form">
+                  <div class="form-group">
+                    <input type="text" name="name" class="form-control" placeholder="Nome/Empresa*" required="">
+                  </div>
+                  <div class="form-group mt-3">
+                    <input type="email" class="form-control" name="email" placeholder="E-mail*" required="">
+                  </div>
+                  <div class="form-group mt-3">
+                    <input type="text" class="form-control" name="phone" placeholder="Contato/WhatsApp (opcional)">
+                  </div>
+                  <div class="form-group mt-3">
+                    <input type="text" class="form-control" name="assunto" placeholder="Assunto">
+                  </div>
+                  <div class="my-3">
+                    <div class="loading">Carregando...</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Sua mensagem foi enviada. Obrigado!</div>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit">Enviar Agora</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Consultation Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-geo-alt icon"></i>
+          <div class="address">
+            <h4>Endereço</h4>
+            <a href="geo:0,0?q=R.%20Luiz%20Ot%C3%A1vio%2C%202565%20-%20Parque%20Taquaral%2C%20Campinas%20-%20SP%2C%2013087-018"
+              target="_blank" rel="noopener noreferrer">
+              <p>Escritório no Taquaral - Campinas</p>
+              <p>R. Luís Otávio, 2565 - 26 - Parque Taquaral</p>
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-telephone icon"></i>
+          <div>
+            <h4>Contatos</h4>
+            <p>
+              <strong>Contato:</strong>
+              <a href="https://wa.me/5519989105667" target="_blank" rel="noopener">
+                +55 19 9 8910-5667
+              </a><br>
+
+              <strong>E-mail:</strong>
+              <a href="mailto:contato@otmiztech.com.br">
+                contato@otmiztech.com.br
+              </a><br>
+            </p>
+
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-clock icon"></i>
+          <div>
+            <h4>Atendimento</h4>
+            <p>
+              Nosso horário de atendimento
+              é de segunda a sexta-feira,
+              das 9h às 18h.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4>Redes Sociais</h4>
+          <div class="social-links d-flex">
+            <a title="Link para Twitter" href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a title="Link para Facebook" href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a title="Link para Instagram" href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a title="Link para LinkedIn" href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <div class="credits">
+        Desenvolvido por <a href="https://devtowre.com.br/" target="_blank" rel="noopener noreferrer">devtower</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/pt.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // --- 🎬 Modal de vídeo principal ---
+    const videoModal = document.getElementById('videoModal');
+    const videoPlayer = document.getElementById('videoPlayer');
+
+    videoModal.addEventListener('shown.bs.modal', () => {
+      videoPlayer.play();
+    });
+
+    videoModal.addEventListener('hidden.bs.modal', () => {
+      videoPlayer.pause();
+      videoPlayer.currentTime = 0;
+    });
+
+
+    // --- 🚀 Quando o DOM estiver pronto ---
+    document.addEventListener("DOMContentLoaded", () => {
+      // ✅ 1. Carregar o vídeo de background o quanto antes
+      const bgVideo = document.getElementById('bgVideo');
+      const source = bgVideo.querySelector('source');
+
+      if (source.dataset.src) {
+        source.src = source.dataset.src;
+        bgVideo.load();
+        bgVideo.play().catch(() => {
+          // Autoplay pode falhar em alguns navegadores sem interação
+          console.log("Autoplay bloqueado — aguardando interação do usuário.");
+        });
+      }
+
+      // ✅ 2. Controlar o mini player flutuante
+      const heroSection = document.querySelector("#hero-teste");
+      const miniPlayer = document.querySelector("#miniPlayer");
+      const miniVideo = document.querySelector("#miniVideo");
+      const closeMiniPlayer = document.querySelector("#closeMiniPlayer");
+
+      let miniVisible = false;
+      let miniClosed = false; // evita reaparecer após fechar
+
+      function showMiniPlayer() {
+        miniPlayer.style.display = "block";
+        requestAnimationFrame(() => (miniPlayer.style.opacity = "1"));
+        miniVideo.play();
+        miniVisible = true;
+      }
+
+      function hideMiniPlayer() {
+        miniPlayer.style.opacity = "0";
+        setTimeout(() => (miniPlayer.style.display = "none"), 300);
+        miniVideo.pause();
+        miniVisible = false;
+      }
+
+      function handleScroll() {
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+
+        if (heroBottom < 0 && !miniVisible && !miniClosed) {
+          showMiniPlayer();
+        } else if (heroBottom >= 0 && miniVisible) {
+          hideMiniPlayer();
+
+          // Se o usuário voltar para o topo, libera o mini player novamente
+          if (heroBottom >= window.innerHeight * 0.8) {
+            miniClosed = false;
+          }
+        }
+      }
+
+      window.addEventListener("scroll", handleScroll);
+
+      // Botão "X" do mini player
+      closeMiniPlayer.addEventListener("click", () => {
+        hideMiniPlayer();
+        miniClosed = true;
+      });
+
+      // Sincronizar com o modal
+      videoModal.addEventListener("show.bs.modal", () => {
+        miniVideo.pause();
+      });
+
+      videoModal.addEventListener("hidden.bs.modal", () => {
+        videoPlayer.pause();
+        if (miniVisible) miniVideo.play();
+      });
+    });
+
+    // --- 📅 Offcanvas "Explorar" (Inovação > agendamento de apresentação) ---
+    const offcanvasExplorarEl = document.getElementById('offcanvasExplorar');
+    const offcanvasExplorar = offcanvasExplorarEl ? new bootstrap.Offcanvas(offcanvasExplorarEl) : null;
+    const explorarForm = document.getElementById('explorarForm');
+    const explorarSolucaoNome = document.getElementById('offcanvasSolucaoNome');
+    const explorarSolucaoInput = document.getElementById('explorarSolucaoInput');
+    const explorarDataHora = document.getElementById('explorarDataHora');
+    const explorarDataHoraError = document.getElementById('explorarDataHoraError');
+    let explorarFlatpickr = null;
+
+    document.querySelectorAll('.servicos .service-card .read-more').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!offcanvasExplorar) return;
+        const card = link.closest('.service-card');
+        const nome = card ? card.querySelector('h3').textContent.trim() : '';
+        explorarSolucaoNome.textContent = nome;
+        explorarSolucaoInput.value = nome;
+        offcanvasExplorar.show();
+      });
+    });
+
+    if (offcanvasExplorarEl) {
+      offcanvasExplorarEl.addEventListener('shown.bs.offcanvas', () => {
+        if (!explorarFlatpickr) {
+          explorarFlatpickr = flatpickr('#explorarCalendar', {
+            inline: true,
+            enableTime: true,
+            time_24hr: true,
+            minDate: 'today',
+            minTime: '09:00',
+            maxTime: '18:00',
+            locale: 'pt',
+            dateFormat: 'd/m/Y H:i',
+            onChange: (selectedDates, dateStr) => {
+              explorarDataHora.value = dateStr;
+              explorarDataHoraError.classList.add('d-none');
+            }
+          });
+        }
+      });
+
+      offcanvasExplorarEl.addEventListener('hidden.bs.offcanvas', () => {
+        explorarForm.reset();
+        explorarDataHora.value = '';
+        explorarDataHoraError.classList.add('d-none');
+        if (explorarFlatpickr) explorarFlatpickr.clear();
+      });
+    }
+
+    if (explorarForm) {
+      explorarForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (!explorarForm.checkValidity()) {
+          explorarForm.reportValidity();
+          return;
+        }
+
+        if (!explorarDataHora.value) {
+          explorarDataHoraError.classList.remove('d-none');
+          return;
+        }
+
+        const solucao = explorarSolucaoInput.value;
+        offcanvasExplorar.hide();
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Apresentação agendada!',
+          html: `Recebemos seu pedido para <strong>${solucao}</strong>.<br>Nossa equipe vai confirmar o horário por e-mail em breve.`,
+          confirmButtonColor: '#544bb5'
+        });
+      });
+    }
+  </script>
+
+</body>
+
+</html>
