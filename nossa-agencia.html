@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Quem Somos</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+
+  <style>
+    /* Ajuste no mega menu */
+    .navbar-nav .dropdown-menu {
+      width: 100%;
+      left: 0;
+      position: absolute;
+      top: 100%;
+      display: none;
+      z-index: 1000;
+    }
+
+    .dropdown-menu {
+      display: none;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    /* Estilos para o conteudo dentro do mega menu */
+    .dropdown-menu .container {
+      padding: 0;
+    }
+
+    .dropdown-menu .row {
+      display: flex;
+      flex-wrap: wrap;
+      /* justify-content: space-between; */
+    }
+
+    .dropdown-menu .col-md-6,
+    .dropdown-menu .col-xl-3 {
+      padding: 0 15px;
+    }
+
+    /* Imagens dentro do mega menu */
+    .dropdown-menu img {
+      width: 125px;
+      height: 80px;
+    }
+
+    /* Ajustando links e listas */
+    .dropdown-menu .list-group-item {
+      padding: 8px 10px;
+    }
+
+    .dropdown-menu .list-group-item:hover {
+      background-color: #f8f9fa;
+      cursor: pointer;
+    }
+
+    #dropdownMenu {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      position: absolute;
+      left: -34vw;
+      width: 100vw !important;
+      top: 4.5vw;
+      border: 0px;
+      /* background: linear-gradient(49deg, #095180, #095180, #1e4055); */
+      border-radius: 0% 0% 5% 10%;
+      background: linear-gradient(69deg, #095180, #095180, #1e4055);
+      mix-blend-mode: multiply;
+    }
+
+    .dropdown-menu a {
+      text-decoration: none;
+    }
+
+    .dropdown-menu h3 {
+      font-size: 20px;
+      font-weight: 200;
+    }
+  </style>
+
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="assets/img/logo.png" alt=""> -->
+                <h1 class="sitename">OtmizTech</h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu navbar navbar-expand-lg">
+                <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarExample4">
+                    <ul class="navbar-nav me-auto ps-lg-0" style="padding-left: 0.15rem">
+                      <li><a href="index.html">Home</a></li>
+                      <!-- Navbar dropdown -->
+                      <li class="nav-item dropdown position-static">
+                        <a data-mdb-dropdown-init="" class="nav-link dropdown-toggle" ref="#" id="navbarDropdown" role="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          Soluções
+                        </a>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownMenu" class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown">
+                          <div class="container">
+                            <div class="row my-4">
+                              <div class="col-md-5 col-xl-5 mb-3 mb-xl-0 border-end">
+                                <div class="pt-2">
+                                  <a href="" class="text-body">
+                                    <div class="row mb-4 pb-2 d-flex justify-content-left align-items-center">
+                                      <div class="col-4">
+                                        <img src="assets/img/icons/solucoes/sistemas.jpg" class="shadow-1-strong rounded" alt="">
+                                      </div>
+                                      <div class="col-8">
+                                        <h3 class="mb-2">
+                                          <strong>Sistemas sob Medida</strong><br>Quero um sistema feito <br>para o meu processo
+                                        </h3>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                                <div class="pt-2">
+                                  <a href="" class="text-body">
+                                    <div class="row mb-4 pb-2 d-flex justify-content-left align-items-center">
+                                      <div class="col-4">
+                                        <img src="assets/img/icons/solucoes/saas.jpg" class="shadow-1-strong rounded" alt="">
+                                      </div>
+                                      <div class="col-8">
+                                        <h3 class="mb-2">
+                                          <strong>Plataformas SaaS</strong><br>Quero transformar meu sistema<br>em produto multi-tenant
+                                        </h3>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="col-md-5 col-xl-5 mb-3 mb-xl-0">
+                                <div class="pt-2">
+                                  <a href="" class="text-body">
+                                    <div class="row mb-4 pb-2 d-flex justify-content-left align-items-center">
+                                      <div class="col-4">
+                                        <img src="assets/img/icons/solucoes/hubs.jpg" class="shadow-1-strong rounded" alt="">
+                                      </div>
+                                      <div class="col-8">
+                                        <h3 class="mb-2">
+                                          <strong>Hubs &amp; Integrações</strong><br>Preciso centralizar as ferramentas<br>e dados da minha empresa
+                                        </h3>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                                <div class="pt-2">
+                                  <a href="" class="text-body">
+                                    <div class="row mb-4 pb-2 d-flex justify-content-left align-items-center">
+                                      <div class="col-4">
+                                        <img src="assets/img/icons/solucoes/ia.jpg" class="shadow-1-strong rounded" alt="">
+                                      </div>
+                                      <div class="col-8">
+                                        <h3 class="mb-2">
+                                          <strong>Automação com IA</strong><br>Quero um agente inteligente<br>para o meu atendimento
+                                        </h3>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li><a href="cases.html">Cases e Clientes</a></li>
+                      <li><a href="nossa-agencia.html" class="active">Quem Somos</a></li>
+                      <li><a href="#">Conteúdos</a></li>
+                      <li><a href="atendimento.html" class="btn-menu">Atendimento</a></li>
+                    </ul>
+                  </div>
+        
+                  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </div>
+        
+              </nav>
+
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero section dark-background">
+
+            <!-- <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in"> -->
+
+            <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+                <div class="container position-relative">
+
+                    <div class="row">
+                        <div class="col-md-6 text-left">
+                            <p>#QUEM<strong>SOMOS</strong></p>
+                            <h1>OtmizTech</h1>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+        </section>
+
+        <style>
+            .about-company .content img {
+                border-radius: 5px;
+                width: 100%;
+                height: auto;
+            }
+        </style>
+
+        <section id="about-company" class="about-company section light-background">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-6 position-relative align-self-center">
+                        <div class="container section-title" data-aos="fade-up">
+                            <h2>Tecnologia sob medida para <strong>o seu negócio</strong></h2>
+                            <h3>Sistemas, Hubs e Plataformas construídos para o jeito único que a sua empresa trabalha</h3>
+                        </div>
+                        <p>É nessa diversidade que construímos um ambiente de colaboração, parceria e empatia, capaz de
+                            gerar bases sólidas para que a OtmizTech deixe um legado marcante.</p>
+                        <p>Em nossa trajetória, valorizamos:</p>
+                        <ul>
+                            <li>A entrega ágil e estratégica, guiada pelo compromisso com a qualidade;</li>
+                            <li>A empatia como o alicerce das relações;</li>
+                            <li>O erro como oportunidade de aprendizado e inovação.</li>
+                        </ul>
+                        <p>Ao explorar novas possibilidades, assumimos riscos de forma consciente e responsável,
+                            exercitando liberdade, criatividade e autonomia. Sabemos que a mudança é parte essencial do
+                            nosso crescimento e que juntos somos mais fortes, flexíveis e conectado</p>
+                        <p>Saiba: até 2025, 40% das empresas tradicionais podem deixar de existir pela incapacidade de
+                            adaptação neste ambiente. As tecnologias têm papel importante para colaborar com o trabalho
+                            de gestores e funcionários. Sim, é preciso investir em ferramentas digitais, mas a
+                            Transformação Digital vai além.</p>
+                        <h4><strong>Transformação digital é, na verdade, sobre pessoas e sobre a forma de resolver
+                                problemas e gerar valor para os clientes. </strong></h4>
+                        <p>Ou seja, cada sistema, Hub ou plataforma que construímos precisa estar relacionado e fazer
+                            parte de algo maior: o jeito como o seu negócio funciona e cresce.</p>
+                    </div>
+                    <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/img/placeholders/about-portrait.jpg" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="call-to-action" class="call-to-action section dark-background">
+            <div class="container">
+                <img src="assets/img/cta-bg.jpg" alt="">
+                <div class="content row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-xl-10">
+                        <div class="text-center">
+                            <a href="https://www.youtube.com/watch?v=SQxzmOlRpxo" class="glightbox play-btn"></a>
+                            <h3>OtmizTech</h3>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum.</p>
+                            <a class="cta-btn" href="#">AGENDAR REUNIÃO</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="where-ideas-live" class="where-ideas-live section light-background">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 main-text">
+                        <h2>ONDE MORAM AS GRANDES IDEIAS?</h2>
+                        <p>Na <strong>OtmizTech</strong>, acreditamos que as melhores ideias não vêm de um lugar
+                            único, mas de um espaço dinâmico onde a criatividade, a colaboração e o talento se
+                            encontram. Nosso time é um lugar onde mentes curiosas se unem para criar sistemas
+                            inovadores, construir arquiteturas sólidas e transformar desafios em oportunidades.
+                        </p>
+                        <p>Estamos constantemente em busca de novas formas de pensar, sempre abertos à experimentação e
+                            dispostos a arriscar quando é necessário. Sabemos que a inovação nasce da diversidade de
+                            perspectivas, e é por isso que cada projeto é abordado de forma única, com uma visão fresca
+                            e adaptada às necessidades do cliente.</p>
+                        <p>Acreditamos que as melhores ideias moram em lugares onde há confiança, autonomia e um
+                            propósito claro. Aqui, cada pessoa é convidada a pensar fora da caixa, a questionar o status
+                            quo e a criar com liberdade, sabendo que sempre temos a força da equipe para transformar
+                            essas ideias em resultados reais e eficazes.</p>
+                        <p>Na <strong>OtmizTech</strong>, a inovação não é apenas um conceito, é uma prática diária. É
+                            aqui que os sistemas ganham forma, evoluem e, mais importante, geram resultados
+                            extraordinários para nossos clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-time-line-2">
+            <div class="container">
+                <div class="row justify-content-around gy-4 mb-4">
+
+                    <div class="col-md-12">
+                        <div class="container section-title text-center" data-aos="fade-up">
+                            <h2>NOSSA TRAJETÓRIA</h2>
+                        </div>
+                        <div class="timeline-container">
+                            <!-- Linha 1 -->
+                            <div class="timeline-row">
+                                <div class="timeline-item left-item">
+                                    <div class="card">
+                                        <h4>1998<span>Dolor sun ammet</span></h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                                            tempor incididunt ut
+                                            labore et dolore magna aliqua.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item right-item d-none d-md-block">
+                                    <div class="card-img">
+                                        <img src="assets/img/placeholders/timeline-1.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Linha 2 -->
+                            <div class="timeline-row">
+                                <div class="timeline-item left-item d-none d-md-block">
+                                    <div class="card-img">
+                                        <img src="assets/img/placeholders/timeline-2.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="timeline-item right-item">
+                                    <div class="card">
+                                        <h4>2000<span>Dolor sun ammet</span></h4>
+                                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo
+                                            consequat.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Linha 1 -->
+                            <div class="timeline-row">
+                                <div class="timeline-item left-item">
+                                    <div class="card">
+                                        <h4>2001<span>Dolor sun ammet</span></h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                                            tempor incididunt ut
+                                            labore et dolore magna aliqua.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item right-item d-none d-md-block">
+                                    <div class="card-img">
+                                        <img src="assets/img/placeholders/timeline-3.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Linha 2 -->
+                            <div class="timeline-row">
+                                <div class="timeline-item left-item d-none d-md-block">
+                                    <div class="card-img">
+                                        <img src="assets/img/placeholders/timeline-4.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="timeline-item right-item">
+                                    <div class="card">
+                                        <h4>2002<span>Dolor sun ammet</span></h4>
+                                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo
+                                            consequat.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </section>
+
+        <section id="footer-call-to-action" class="footer-call-to-action section light-background">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-6 text-center">
+                        <h2>PRONTO PARA TIRAR SEU PROJETO DO PAPEL?</h2>
+                        <p>Conte pra gente o desafio do seu negócio e descubra qual sistema, Hub ou plataforma faz mais sentido para o seu momento.</p>
+                        <a href="orcamento.html" class="btn-get-started">SOLICITAR PROPOSTA</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="assets/img/placeholders/cta-square.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer" class="footer dark-background">
+
+            <div class="footer-newsletter">
+              <div class="container">
+                <div class="row justify-content-center text-center">
+                  <div class="col-lg-6">
+                    <h4>Receba as melhores dicas direto no seu e-mail!</h4>
+                    <p>Cadastre-se em nossa newsletter e fique por dentro das novidades e tendências!</p>
+                    <form action="#" method="post" class="php-email-form">
+                      <div class="newsletter-form"><input title="email" type="email" name="email" id="email"><input type="submit" value="Inscrever-se"></div>
+                      <div class="loading">Carregando...</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">Sua solicitação de assinatura foi enviada. Obrigado!</div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="container footer-top">
+              <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                  <a href="index.html" class="d-flex align-items-center">
+                    <img src="assets/img/logo.png" alt="" width="200">
+                  </a>
+                  <div class="footer-contact pt-3">
+                    <p>Avenida Paulista, 1234</p>
+                    <p>São Paulo, SP - 01310-100</p> 
+                    <p><span>+55 (11) 12345-6789</span></p>             
+                  <hr>
+                    <p>Rua Doutor Quirino, 567</p>
+                    <p>Campinas, SP - 13015-021</p>
+                    <p><span>+55 (19) 98765-4321</span></p>
+      
+                    <p class="mt-3"><span>contato@otmiztech.com.br</span></p>
+                  </div>
+                  
+                </div>
+        
+                <div class="col-lg-2 col-md-3 footer-links">
+                  <h4>Links Úteis</h4>
+                  <ul>
+                    <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="solucoes.html">Soluções</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="nossa-agencia.html">Quem Somos</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Conteúdos</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="terms-of-service.html">Termos de Serviço</a></li>
+                  </ul>
+                </div>
+
+                
+        
+                <div class="col-lg-2 col-md-3 footer-links">
+                  <h4>Serviços</h4>
+                  <ul>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Sistemas sob Medida</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Hubs &amp; Integrações</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Plataformas SaaS</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Automação com IA</a></li>
+                  </ul>
+                </div>
+        
+                <div class="col-lg-4 col-md-12">
+                  <h4>Siga-nos</h4>
+                  <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                  <div class="social-links d-flex">
+                    <a href="http://" target="_blank" rel="noopener noreferrer" title="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer" title="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer" title="linkedin"><i class="bi bi-linkedin"></i></a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer" title="youtube"><i class="bi bi-youtube"></i></a>
+                  </div>
+                </div>
+        
+              </div>
+            </div>
+        
+            <div class="container copyright text-center mt-4">
+              <p>© <span>Copyright</span> <strong class="px-1 sitename">OtmizTech</strong> - <span>Todos os Direitos Reservados</span></p>
+            </div>
+        
+          </footer>
+
+
+
+    </main>
+
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

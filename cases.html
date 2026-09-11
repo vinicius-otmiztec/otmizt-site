@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>OtmizTech</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+
+  <style>
+    /* Ajuste no mega menu */
+    .navbar-nav .dropdown-menu {
+      width: 100%;
+      left: 0;
+      position: absolute;
+      top: 100%;
+      display: none;
+      z-index: 1000;
+    }
+
+    .dropdown-menu {
+      display: none;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    /* Estilos para o conteudo dentro do mega menu */
+    .dropdown-menu .container {
+      padding: 0;
+    }
+
+    .dropdown-menu .row {
+      display: flex;
+      flex-wrap: wrap;
+      /* justify-content: space-between; */
+    }
+
+    .dropdown-menu .col-md-6,
+    .dropdown-menu .col-xl-3 {
+      padding: 0 15px;
+    }
+
+    /* Imagens dentro do mega menu */
+    .dropdown-menu img {
+      width: 125px;
+      height: 80px;
+    }
+
+    /* Ajustando links e listas */
+    .dropdown-menu .list-group-item {
+      padding: 8px 10px;
+    }
+
+    .dropdown-menu .list-group-item:hover {
+      background-color: #f8f9fa;
+      cursor: pointer;
+    }
+
+    #dropdownMenu {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      position: absolute;
+      left: -34vw;
+      width: 100vw !important;
+      top: 4.5vw;
+      border: 0px;
+      /* background: linear-gradient(49deg, #095180, #095180, #1e4055); */
+      border-radius: 0% 0% 5% 10%;
+      background: linear-gradient(69deg, #095180, #095180, #1e4055);
+      mix-blend-mode: multiply;
+    }
+
+    .dropdown-menu a {
+      text-decoration: none;
+    }
+
+    .dropdown-menu h3 {
+      font-size: 20px;
+      font-weight: 200;
+    }
+
+    @media (min-width: 1200px) {
+
+      .h1,
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">OtmizTech</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarExample4">
+            <ul class="navbar-nav me-auto ps-lg-0" style="padding-left: 0.15rem">
+              <li><a href="index.html">Home</a></li>
+              <!-- Navbar dropdown -->
+              <li class="nav-item dropdown position-static">
+                <a data-mdb-dropdown-init="" class="nav-link dropdown-toggle" ref="#" id="navbarDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Soluções
+                </a>
+                <!-- Dropdown menu -->
+                <div id="dropdownMenu" class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown">
+                  <div class="container">
+                    <div class="row my-4">
+                      <div class="col-md-5 col-xl-5 mb-3 mb-xl-0 border-end">
+                        <div class="pt-2">
+                          <a href="" class="text-body">
+                            <div class="row mb-4 pb-2 d-flex justify-content-left align-items-center">
+                              <div class="col-4">
+                                <img src="assets/img/icons/solucoes/sistemas.jpg" class="shadow-1-strong rounded" alt="">
+                              </div>
+                              <div class="col-8">
+                                <h3 class="mb-2">
+                                  <strong>Sistemas sob Medida</strong><br>Quero um sistema feito <br>para o meu processo
+                                </h3>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="pt-2">
+                          <a href="" class="text-body">
+                            <div class="row mb-4 pb-2 d-flex justify-content-left align-items-center">
+                              <div class="col-4">
+                                <img src="assets/img/icons/solucoes/saas.jpg" class="shadow-1-strong rounded" alt="">
+                              </div>
+                              <div class="col-8">
+                                <h3 class="mb-2">
+                                  <strong>Plataformas SaaS</strong><br>Quero transformar meu sistema<br>em produto
+                                  multi-tenant
+                                </h3>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-md-5 col-xl-5 mb-3 mb-xl-0">
+                        <div class="pt-2">
+                          <a href="" class="text-body">
+                            <div class="row mb-4 pb-2 d-flex justify-content-left align-items-center">
+                              <div class="col-4">
+                                <img src="assets/img/icons/solucoes/hubs.jpg" class="shadow-1-strong rounded" alt="">
+                              </div>
+                              <div class="col-8">
+                                <h3 class="mb-2">
+                                  <strong>Hubs &amp; Integrações</strong><br>Preciso centralizar as ferramentas<br>e
+                                  dados da minha empresa
+                                </h3>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="pt-2">
+                          <a href="" class="text-body">
+                            <div class="row mb-4 pb-2 d-flex justify-content-left align-items-center">
+                              <div class="col-4">
+                                <img src="assets/img/icons/solucoes/ia.jpg" class="shadow-1-strong rounded" alt="">
+                              </div>
+                              <div class="col-8">
+                                <h3 class="mb-2">
+                                  <strong>Automação com IA</strong><br>Quero um agente inteligente<br>para o meu
+                                  atendimento
+                                </h3>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li><a href="cases.html" class="active">Cases e Clientes</a></li>
+              <li><a href="nossa-agencia.html">Quem Somos</a></li>
+              <li><a href="#">Conteúdos</a></li>
+              <li><a href="atendimento.html" class="btn-menu">Atendimento</a></li>
+            </ul>
+          </div>
+
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </div>
+
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <!-- <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in"> -->
+
+      <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="container position-relative">
+
+          <div class="row">
+            <div class="col-md-6 text-left">
+              <h1>Os Resultados Falam por Si Só</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Hero Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+
+      <div class="container-fluid">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "loopAdditionalSlides": 5,
+              "speed": 8000,
+              "autoplay": {
+                "delay": 0,
+                "disableOnInteraction": false
+              },
+              "slidesPerView": 6,
+              "freeMode": true,
+              "freeModeMomentum": false,
+              "cssMode": false,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 8,
+                  "spaceBetween": 40
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/clients/client-1.jpg" class="img-fluid" alt="NEXCOR"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-2.jpg" class="img-fluid" alt="VORTEX HUB">
+            </div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-3.jpg" class="img-fluid" alt="PRAXIS"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-4.jpg" class="img-fluid" alt="GRUPO MERIDIAN">
+            </div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-5.jpg" class="img-fluid" alt="ATLAS"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-6.jpg" class="img-fluid" alt="CONFLUENCE">
+            </div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-7.jpg" class="img-fluid" alt="ZENITH SAÚDE">
+            </div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-8.jpg" class="img-fluid" alt="BOREAL"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-9.jpg" class="img-fluid" alt="TRÍADE FARMA">
+            </div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-10.jpg" class="img-fluid" alt="NORTE CAPITAL">
+            </div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-11.jpg" class="img-fluid" alt="ALIANÇA RURAL">
+            </div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-12.jpg" class="img-fluid" alt="CLUSTER LABS">
+            </div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-13.jpg" class="img-fluid"
+                alt="ESTRADA LOGÍSTICA"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-14.jpg" class="img-fluid" alt="PRISMA RETAIL">
+            </div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-15.jpg" class="img-fluid"
+                alt="CONSTELAR EDUCAÇÃO"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-16.jpg" class="img-fluid"
+                alt="MERIDIANO SAÚDE"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-17.jpg" class="img-fluid" alt="VANTIA GROUP">
+            </div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-18.jpg" class="img-fluid"
+                alt="ÓRBITA SISTEMAS"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Clients Section -->
+
+    <!-- cases Section -->
+    <section id="cases" class="cases section">
+
+      <div class="container container-first">
+        <div class="row gy-4 align-items-center cases-item">
+          <div class="col-md-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <img src="assets/img/placeholders/case-sistemas.jpg" class="img-fluid rounded" alt="">
+          </div>
+          <div class="col-md-6 p-4" data-aos="fade-up" data-aos-delay="100" id="form-container">
+
+            <!-- Barra de progresso -->
+            <progress id="progress-bar" value="0" max="3" style="width: 100%; height: 10px;"></progress>
+
+            <div id="step-0" class="step">
+              <span><strong>SISTEMAS</strong></span>
+              <h2>Sistema sob medida reduziu em 68% o tempo de operação de uma rede de farmácias</h2>
+              <h5>
+                Substituímos planilhas e processos manuais por um sistema único, construído sob medida para o
+                fluxo real da operação, do estoque ao atendimento ao cliente.
+              </h5>
+              <button id="start-form" class="btn">Ver case completo >></button>
+            </div>
+            <form autocomplete="off">
+              <div id="step-1" class="step d-none">
+                <h4 class="mb-4 mt-4">Para garantir a melhor experiência, por favor, informe:</h4>
+                <label for="segmento" class="mb-2">1 - Qual a área do seu negócio?</label>
+                <input type="text" id="segmento" class="form-control" placeholder="" required>
+                <button id="next-step" class="btn mt-4">Próximo >></button>
+              </div>
+
+              <div id="step-2" class="step d-none">
+                <h4 class="mb-4">Tenho apenas mais uma pergunta:</h4>
+                <label for="email" class="mb-2">2 - Para qual e-mail podemos enviar um convite de meet?</label>
+                <input type="email" id="email" class="form-control" placeholder="E-mail" required>
+                <button id="submit-form" class="btn mt-4">Ver Case completo >></button>
+              </div>
+            </form>
+
+            <div id="case-content" class="step d-none text-center">
+              <h2 id="countdown-message">Aguarde...<br> <span id="countdown">4</span> segundos.</h2>
+              <p>Você será redirecionado para a página do case</p>
+            </div>
+
+            <p id="error-message" class="text-danger d-none">Por favor, preencha todos os campos.</p>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        let leadData = {};
+
+        document.getElementById("progress-bar").classList.add('d-none');
+
+        function updateProgressBar(step) {
+          document.getElementById('progress-bar').classList.remove('d-none');
+          const progressBar = document.getElementById("progress-bar");
+          progressBar.value = step;  // Atualiza o valor da barra de progresso
+        }
+
+        function startRedirectCountdown() {
+          document.getElementById("progress-bar").classList.add('d-none');
+          let countdown = 4;  // Tempo inicial de 4 segundos
+          const countdownElement = document.getElementById("countdown");
+
+          // Função para atualizar o contador regressivo a cada segundo
+          const interval = setInterval(function () {
+            countdownElement.textContent = countdown;
+            countdown--;
+
+            // Quando o contador chega a zero, redireciona para /case.html
+            if (countdown < 0) {
+              clearInterval(interval);  // Limpa o intervalo para parar o contador
+              window.location.href = 'case.html';  // Redireciona para o caso completo
+            }
+          }, 1000);
+        }
+
+        document.getElementById("start-form").addEventListener("click", function () {
+          document.getElementById("step-0").classList.add("d-none");
+          document.getElementById("step-1").classList.remove("d-none");
+          updateProgressBar(1);  // Atualiza a barra para o passo 1
+        });
+
+        document.getElementById("next-step").addEventListener("click", function () {
+          let segmento = document.getElementById("segmento").value;
+
+          if (segmento) {
+            leadData.segmento = segmento;
+            document.getElementById("step-1").classList.add("d-none");
+            document.getElementById("step-2").classList.remove("d-none");
+            document.getElementById("error-message").classList.add("d-none");
+            updateProgressBar(2);  // Atualiza a barra para o passo 2
+          } else {
+            document.getElementById("error-message").classList.remove("d-none");
+          }
+        });
+
+        document.getElementById("submit-form").addEventListener("click", function () {
+          let email = document.getElementById("email").value;
+
+          if (email) {
+            leadData.email = email;
+            document.getElementById("step-2").classList.add("d-none");
+            document.getElementById("case-content").classList.remove("d-none");
+            document.getElementById("error-message").classList.add("d-none");
+            updateProgressBar(3);  // Atualiza a barra para o passo 3
+
+            // Inicia o contador regressivo para redirecionamento
+            startRedirectCountdown();
+
+            // Simulação de envio de dados para integração futura
+            console.log("Lead capturada:", leadData);
+          } else {
+            document.getElementById("error-message").classList.remove("d-none");
+          }
+        });
+      </script>
+
+
+
+
+
+      <div class="container-fluid container-inner">
+        <div class="container">
+          <div class="row gy-4 align-items-center cases-item">
+            <div class="col-md-6 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+              <img src="assets/img/placeholders/case-hubs.jpg" class="img-fluid rounded" alt="">
+            </div>
+            <div class="col-md-6 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+              <span class="text-white"><strong>HUBS</strong></span>
+              <h2 class="text-white">Hub de integração unificou 5 sistemas em um único painel</h2>
+              <h5 class="text-white">
+                Dados que antes viviam espalhados entre planilhas e sistemas isolados passaram a fluir
+                automaticamente em um único Hub, sem retrabalho manual entre as equipes.
+              </h5>
+              <a href="case.html" title="ver case" class="btn text-white">Ver case completo</a>
+            </div>
+          </div><!-- cases Item -->
+        </div>
+      </div>
+
+      <div class="container container-first">
+        <div class="row gy-4 align-items-center cases-item">
+          <div class="col-md-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <img src="assets/img/placeholders/case-saas.jpg" class="img-fluid rounded" alt="">
+          </div>
+          <div class="col-md-6 p-4" data-aos="fade-up" data-aos-delay="100">
+            <span><strong>SAAS</strong></span>
+            <h2>Plataforma multi-tenant reduziu em 40% o tempo de implantação por unidade</h2>
+            <h5>
+              Transformamos um sistema interno em um produto SaaS multi-tenant, permitindo lançar cada
+              nova unidade em dias, não em meses.
+            </h5>
+            <a href="case.html" title="ver case" class="btn">Ver case completo >> </a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid container-inner">
+        <div class="container">
+          <div class="row gy-4 align-items-center cases-item">
+            <div class="col-md-6 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+              <img src="assets/img/placeholders/case-ia.jpg" class="img-fluid rounded" alt="">
+            </div>
+            <div class="col-md-6 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+              <span class="text-white"><strong>IA</strong></span>
+              <h2 class="text-white">Agente de atendimento via WhatsApp respondeu 80% das dúvidas sem intervenção humana
+              </h2>
+              <h5 class="text-white">
+                Um agente com IA passou a triar e responder o atendimento no WhatsApp, liberando o time
+                para os casos que realmente precisam de uma pessoa.
+              </h5>
+              <a href="case.html" title="ver case" class="btn text-white">Ver case completo</a>
+            </div>
+          </div><!-- cases Item -->
+        </div>
+      </div>
+
+      <div class="container container-first">
+        <div class="row gy-4 align-items-center cases-item">
+          <div class="col-md-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <img src="assets/img/placeholders/case-hubs-2.jpg" class="img-fluid rounded" alt="">
+          </div>
+          <div class="col-md-6 p-4" data-aos="fade-up" data-aos-delay="100">
+            <span><strong>HUBS</strong></span>
+            <h2>Como uma rede de unidades eliminou o retrabalho manual entre sistemas</h2>
+            <h5>
+              Cada unidade usava suas próprias planilhas e ferramentas. Um Hub central passou a
+              centralizar dados e automatizar o que antes era feito à mão, unidade por unidade.
+            </h5>
+            <a href="case.html" title="ver case" class="btn">Ver case completo >> </a>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <footer id="footer" class="footer dark-background">
+
+      <div class="footer-newsletter">
+        <div class="container">
+          <div class="row justify-content-center text-center">
+            <div class="col-lg-6">
+              <h4>Receba as melhores dicas direto no seu e-mail!</h4>
+              <p>Cadastre-se em nossa newsletter e fique por dentro das novidades e tendências!</p>
+              <form action="#" method="post" class="php-email-form">
+                <div class="newsletter-form"><input title="email" type="email" name="email" id="email"><input
+                    type="submit" value="Inscrever-se"></div>
+                <div class="loading">Carregando...</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Sua solicitação de assinatura foi enviada. Obrigado!</div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="d-flex align-items-center">
+              <img src="assets/img/logo.png" alt="" width="200">
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Avenida Paulista, 1234</p>
+              <p>São Paulo, SP - 01310-100</p>
+              <p><span>+55 (11) 12345-6789</span></p>
+              <hr>
+              <p>Rua Doutor Quirino, 567</p>
+              <p>Campinas, SP - 13015-021</p>
+              <p><span>+55 (19) 98765-4321</span></p>
+
+              <p class="mt-3"><span>contato@otmiztech.com.br</span></p>
+            </div>
+
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Links Úteis</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="solucoes.html">Soluções</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="nossa-agencia.html">Quem Somos</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Conteúdos</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="terms-of-service.html">Termos de Serviço</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Serviços</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Sistemas sob Medida</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Hubs &amp; Integrações</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Plataformas SaaS</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Automação com IA</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-12">
+            <h4>Siga-nos</h4>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <div class="social-links d-flex">
+              <a href="http://" target="_blank" rel="noopener noreferrer" title="facebook"><i
+                  class="bi bi-facebook"></i></a>
+              <a href="http://" target="_blank" rel="noopener noreferrer" title="instagram"><i
+                  class="bi bi-instagram"></i></a>
+              <a href="http://" target="_blank" rel="noopener noreferrer" title="linkedin"><i
+                  class="bi bi-linkedin"></i></a>
+              <a href="http://" target="_blank" rel="noopener noreferrer" title="youtube"><i
+                  class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">OtmizTech</strong> - <span>Todos os Direitos
+            Reservados</span></p>
+      </div>
+
+    </footer>
+
+
+
+  </main>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>

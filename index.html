@@ -4,155 +4,273 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Otmiz Tech</title>
+  <title>OtmizTech</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <link href="assets/img/favicon-black.png" rel="icon">
-
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
+  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" rel="stylesheet">
 
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Ajuste no mega menu */
+    .navbar-nav .dropdown-menu {
+      width: 100%;
+      left: 0;
+      position: absolute;
+      top: 100%;
+      display: none;
+      z-index: 1000;
+    }
+
+    .dropdown-menu {
+      display: none;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    /* Estilos para o conteúdo dentro do mega menu */
+    .dropdown-menu .container {
+      padding: 0;
+    }
+
+    .dropdown-menu .row {
+      display: flex;
+      flex-wrap: wrap;
+      /* justify-content: space-between; */
+    }
+
+    .dropdown-menu .col-md-6,
+    .dropdown-menu .col-xl-3 {
+      padding: 0 15px;
+    }
+
+    /* Imagens dentro do mega menu */
+    .dropdown-menu img {
+      width: 125px;
+      height: 80px;
+    }
+
+    /* Ajustando links e listas */
+    .dropdown-menu .list-group-item {
+      padding: 8px 10px;
+    }
+
+    .dropdown-menu .list-group-item:hover {
+      background-color: #f8f9fa;
+      cursor: pointer;
+    }
+
+    #dropdownMenu {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      position: absolute;
+      left: -34vw;
+      width: 100vw !important;
+      top: 4.5vw;
+      border: 0px;
+      border-radius: 0% 0% 5% 10%;
+      background: linear-gradient(69deg, #040404ed, #232323, #1f2021);
+      mix-blend-mode: multiply;
+    }
+
+    .dropdown-menu a {
+      text-decoration: none;
+    }
+
+    .dropdown-menu h3 {
+      font-size: 20px;
+      font-weight: 200;
+    }
+  </style>
+
+
+
 </head>
 
 <body class="index-page">
 
-  <!-- Modal -->
-  <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content border-0">
-        <div class="modal-body p-0">
-          <video id="videoPlayer" width="100%" controls>
-            <source src="assets/mp4/video.mp4" type="video/mp4">
-            Seu navegador não suporta vídeo HTML5.
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-  <!-- Offcanvas: Agendar apresentação (Inovação > Explorar) -->
-  <div class="offcanvas offcanvas-end explorar-offcanvas" tabindex="-1" id="offcanvasExplorar" aria-labelledby="offcanvasExplorarLabel">
-    <div class="offcanvas-header">
-      <div>
-        <h5 class="offcanvas-title" id="offcanvasExplorarLabel">Agende uma apresentação</h5>
-        <p class="explorar-solucao-nome mb-0" id="offcanvasSolucaoNome">Solução</p>
-      </div>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
-    </div>
-    <div class="offcanvas-body">
-      <form id="explorarForm" novalidate>
-        <input type="hidden" name="solucao" id="explorarSolucaoInput">
-
-        <div class="mb-3">
-          <label for="explorarNome" class="form-label">Nome*</label>
-          <input type="text" class="form-control" id="explorarNome" name="nome" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="explorarEmpresa" class="form-label">Empresa*</label>
-          <input type="text" class="form-control" id="explorarEmpresa" name="empresa" required>
-        </div>
-
-        <div class="mb-4">
-          <label for="explorarEmail" class="form-label">E-mail*</label>
-          <input type="email" class="form-control" id="explorarEmail" name="email" required>
-        </div>
-
-        <div class="mb-4">
-          <label class="form-label">Escolha o dia e o horário*</label>
-          <div id="explorarCalendar" class="explorar-calendar"></div>
-          <input type="hidden" name="data_hora" id="explorarDataHora">
-          <div class="form-text text-danger mt-2 d-none" id="explorarDataHoraError">Selecione um dia e horário.</div>
-        </div>
-
-        <button type="submit" class="btn btn-primary w-100">Agendar Apresentação</button>
-      </form>
-    </div>
-  </div>
-
-  <header id="header" class="header d-flex align-items-center light-background sticky-top">
-    <div class="container position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/logo-white.png" alt="">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <h1 class="sitename">OtmizTech</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
+      <!-- <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="solucoes.html">Nossas Soluções</a></li>
-          <li><a href="contato.html">Contato</a></li>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="solucoes.html">Soluções</a></li>
+          <li><a href="cases.html">Cases e Clientes</a></li>
+          <li><a href="nossa-agencia.html">Quem Somos</a></li>
+          <li><a href="#">Conteúdos</a></li>
+          <li><a href="atendimento.html" class="btn-menu">Atendimento</a></li>          
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav> -->
+
+      <nav id="navmenu" class="navmenu navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarExample4">
+            <ul class="navbar-nav me-auto ps-lg-0" style="padding-left: 0.15rem">
+              <li><a href="#" class="active">Home</a></li>
+              <!-- Navbar dropdown -->
+              <li class="nav-item dropdown position-static">
+                <a data-mdb-dropdown-init="" class="nav-link dropdown-toggle" ref="#" id="navbarDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Soluções
+                </a>
+                <!-- Dropdown menu -->
+                <div id="dropdownMenu" class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown">
+                  <div class="container">
+                    <div class="row my-4">
+                      <div class="col-md-5 col-xl-5 mb-3 mb-xl-0 border-end">
+                        <div class="pt-2">
+                          <a href="" class="text-body">
+                            <div class="row mb-4 pb-2 d-flex justify-content-left align-items-center">
+                              <div class="col-4">
+                                <img src="assets/img/icons/solucoes/sistemas.jpg" class="shadow-1-strong rounded" alt="">
+                              </div>
+                              <div class="col-8">
+                                <h3 class="mb-2">
+                                  <strong>Sistemas sob Medida</strong><br>Quero um sistema feito <br>para o meu processo
+                                </h3>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="pt-2">
+                          <a href="" class="text-body">
+                            <div class="row mb-4 pb-2 d-flex justify-content-left align-items-center">
+                              <div class="col-4">
+                                <img src="assets/img/icons/solucoes/saas.jpg" class="shadow-1-strong rounded" alt="">
+                              </div>
+                              <div class="col-8">
+                                <h3 class="mb-2">
+                                  <strong>Plataformas SaaS</strong><br>Quero transformar meu sistema<br>em produto multi-tenant
+                                </h3>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-md-5 col-xl-5 mb-3 mb-xl-0">
+                        <div class="pt-2">
+                          <a href="" class="text-body">
+                            <div class="row mb-4 pb-2 d-flex justify-content-left align-items-center">
+                              <div class="col-4">
+                                <img src="assets/img/icons/solucoes/hubs.jpg" class="shadow-1-strong rounded" alt="">
+                              </div>
+                              <div class="col-8">
+                                <h3 class="mb-2">
+                                  <strong>Hubs &amp; Integrações</strong><br>Preciso centralizar as ferramentas<br>e dados da minha empresa
+                                </h3>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="pt-2">
+                          <a href="" class="text-body">
+                            <div class="row mb-4 pb-2 d-flex justify-content-left align-items-center">
+                              <div class="col-4">
+                                <img src="assets/img/icons/solucoes/ia.jpg" class="shadow-1-strong rounded" alt="">
+                              </div>
+                              <div class="col-8">
+                                <h3 class="mb-2">
+                                  <strong>Automação com IA</strong><br>Quero um agente inteligente<br>para o meu atendimento
+                                </h3>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li><a href="cases.html">Cases e Clientes</a></li>
+              <li><a href="nossa-agencia.html">Quem Somos</a></li>
+              <li><a href="#">Conteúdos</a></li>
+              <li><a href="atendimento.html" class="btn-menu">Atendimento</a></li>
+            </ul>
+          </div>
+
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </div>
+
       </nav>
 
-      <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      </div>
+
 
     </div>
   </header>
 
   <main class="main">
 
-    <section id="hero-teste" class="hero-teste section dark-background">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
 
-      <div class="hero-teste-background">
-        <video id="bgVideo" muted loop playsinline preload="none" poster="assets/img/poster.png">
-          <source data-src="assets/mp4/video.mp4" type="video/mp4">
-        </video>
-        <div class="overlay"></div>
-      </div>
+      <!-- <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in"> -->
 
-      <div class="container">
-        <div class="row hero-teste-read-line align-items-center justify-content-center text-center">
-          <div class="col-lg-8">
-            <div class="hero-teste-content">
-              <h1>Sua atenção foi pega aqui!</h1>
-              <p>Depois de ver um pouco o vídeo sem som, você leu rapidamente o título principal e agora está bem
-                concentrado lendo este texto.</p>
-              <div class="hero-teste-actions">
-                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#videoModal">
-                  <i class="bi bi-play-circle"></i>
-                  <span>Assista ao Vídeo</span>
-                </a>
-              </div>
+      <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="container position-relative">
+
+          <div class="row">
+            <div class="col-md-8 text-left">
+              <p><strong>#DESDE2015</strong></p>
+              <h2>Inovação e consistência, transformando ideias em sistemas reais</h2>
+              <a href="#" class="btn-get-started">Nossas Soluções</a>
             </div>
           </div>
+
+
         </div>
+
+
+
       </div>
 
-    </section>
+    </section><!-- /Hero Section -->
 
     <!-- Clients Section -->
-    <section id="clients" class="clients section light-background">
+    <section id="clients" class="clients section">
 
-      <div class="container" data-aos="zoom-in">
+      <div class="container-fluid">
 
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
               "loop": true,
-              "speed": 600,
+              "loopAdditionalSlides": 5,
+              "speed": 8000,
               "autoplay": {
-                "delay": 5000
+                "delay": 0,
+                "disableOnInteraction": false
               },
-              "slidesPerView": "auto",
+              "slidesPerView": 6,
+              "freeMode": true,
+              "freeModeMomentum": false,
+              "cssMode": false,
               "pagination": {
                 "el": ".swiper-pagination",
                 "type": "bullets",
@@ -172,25 +290,31 @@
                   "spaceBetween": 80
                 },
                 "992": {
-                  "slidesPerView": 5,
-                  "spaceBetween": 120
-                },
-                "1200": {
-                  "slidesPerView": 5,
-                  "spaceBetween": 120
+                  "slidesPerView": 8,
+                  "spaceBetween": 40
                 }
               }
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="https://placehold.co/200x100" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-1.jpg" class="img-fluid" alt="NEXCOR"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-2.jpg" class="img-fluid" alt="VORTEX HUB"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-3.jpg" class="img-fluid" alt="PRAXIS"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-4.jpg" class="img-fluid" alt="GRUPO MERIDIAN"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-5.jpg" class="img-fluid" alt="ATLAS"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-6.jpg" class="img-fluid" alt="CONFLUENCE"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-7.jpg" class="img-fluid" alt="ZENITH SAÚDE"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-8.jpg" class="img-fluid" alt="BOREAL"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-9.jpg" class="img-fluid" alt="TRÍADE FARMA"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-10.jpg" class="img-fluid" alt="NORTE CAPITAL"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-11.jpg" class="img-fluid" alt="ALIANÇA RURAL"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-12.jpg" class="img-fluid" alt="CLUSTER LABS"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-13.jpg" class="img-fluid" alt="ESTRADA LOGÍSTICA"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-14.jpg" class="img-fluid" alt="PRISMA RETAIL"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-15.jpg" class="img-fluid" alt="CONSTELAR EDUCAÇÃO"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-16.jpg" class="img-fluid" alt="MERIDIANO SAÚDE"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-17.jpg" class="img-fluid" alt="VANTIA GROUP"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-18.jpg" class="img-fluid" alt="ÓRBITA SISTEMAS"></div>
           </div>
         </div>
 
@@ -198,551 +322,454 @@
 
     </section><!-- /Clients Section -->
 
-    <!-- About Section -->
-    <section id="sobre" class="sobre section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row align-items-center">
-          <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
-            <div class="sobre-image">
-              <img src="https://placehold.co/450x580" alt="" class="img-fluid main-image">
-            </div>
-          </div>
-
-          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300">
-            <div class="sobre-content">
-              <h2>Título</h2>
-
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                explicabo.</p>
-
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                explicabo.</p>
-
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                explicabo.</p>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="row align-items-center">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="sobre-content">
-              <h2>Título</h2>
-
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                explicabo.</p>
-
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                explicabo.</p>
-
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                explicabo.</p>
-
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200">
-            <div class="sobre-image">
-              <img src="https://placehold.co/540x700" alt="" class="img-fluid main-image">
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <!-- /About Section -->
-
-    <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section dark-background">
-
-      <img src="assets/img/bg/bg-8.webp" alt="">
-
-      <div class="container">
-
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-xl-9 text-center text-xl-start">
-            <h3>Chamada para ação</h3>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum.</p>
-          </div>
-          <div class="col-xl-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Chamada para ação</a>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Call To Action Section -->
-
-    <!-- Work Process Section -->
-    <section id="work-process" class="work-process section">
-
-     <!-- Section Title -->
-       <div class="container section-title" data-aos="fade-up">
-        <h2>Processos</h2>
-        <h4>Evolução de forma sustentável</h4>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-5">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="steps-item">
-              <div class="steps-image">
-                <img src="https://placehold.co/350x280" alt="Step 1" class="img-fluid" loading="lazy">
-              </div>
-              <div class="steps-content">
-                <div class="steps-number">01</div>
-                <h3>Título</h3>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                  magni dolores eos qui ratione.</p>
-              </div>
-            </div><!-- End Steps Item -->
-          </div>
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="steps-item">
-              <div class="steps-image">
-                <img src="https://placehold.co/350x280" alt="Step 2" class="img-fluid" loading="lazy">
-              </div>
-              <div class="steps-content">
-                <div class="steps-number">02</div>
-                <h3>Título</h3>
-                <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                  aliquid ex ea commodi consequatur.</p>
-              </div>
-            </div><!-- End Steps Item -->
-          </div>
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="steps-item">
-              <div class="steps-image">
-                <img src="https://placehold.co/350x280" alt="Step 3" class="img-fluid" loading="lazy">
-              </div>
-              <div class="steps-content">
-                <div class="steps-number">03</div>
-                <h3>Título</h3>
-                <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-                  eligendi optio cumque nihil.</p>
-              </div>
-            </div><!-- End Steps Item -->
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Work Process Section -->
-
-    <!-- Mini player flutuante -->
-    <div id="miniPlayer" class="mini-player shadow-lg">
-      <video id="miniVideo" muted loop playsinline controls>
-        <source src="assets/mp4/video.mp4" type="video/mp4">
-      </video>
-      <button id="closeMiniPlayer" class="btn-close btn-close-white"></button>
-    </div>
-
-    <section id="servicos" class="servicos section">
+    <!-- Services Section -->
+    <section id="services" class="services section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Inovação</h2>
-        <h4>Conheça Nossas Soluções</h4>
-      </div>
+        <h2>#NOSSAS<strong>SOLUÇÕES</strong></h2>
+      </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card">
-              <div class="icon-box">
-                <i class="bi bi-cash-coin"></i>
+
+          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item position-relative" style="background-image: linear-gradient(transparent 5%, #1e4356 70%), url('assets/img/imagem-padrao-para-cards.avif');">
+
+              <div class="details">
+                <a href="#" class="stretched-link">
+                  <h3>Sistemas</h3>
+                  <h4>Sistemas sob medida construídos para o seu processo</h4>
+                </a>
               </div>
-              <h3>CRM de Cobrança</h3>
-              <p>Régua de cobrança automatizada com envio por WhatsApp, negociação de dívidas e acompanhamento de recebíveis em tempo real. Menos planilha, mais previsibilidade de caixa.</p>
-              <a href="#" class="read-more">Explorar<i class="bi bi-arrow-right"></i></a>
             </div>
-          </div>
+          </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card">
-              <div class="icon-box">
-                <i class="bi bi-diagram-3"></i>
+          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="service-item position-relative" style="background-image: linear-gradient(transparent 5%, #1e4356 70%), url('assets/img/imagem-padrao-para-cards.avif');">
+
+              <div class="details">
+                <a href="#" class="stretched-link">
+                  <h3>Integrações</h3>
+                  <h4>Centralize ferramentas e dados em um único painel</h4>
+                </a>
               </div>
-              <h3>Hub Industrial</h3>
-              <p>Uma central única para compras, gestão de pessoas, ferramentas e ativos da sua indústria, com controle de acesso por perfil e histórico completo de movimentações.</p>
-              <a href="#" class="read-more">Explorar<i class="bi bi-arrow-right"></i></a>
-
             </div>
-          </div>
+          </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card">
-              <div class="icon-box">
-                <i class="bi bi-capsule"></i>
+          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item position-relative" style="background-image: linear-gradient(transparent 5%, #1e4356 70%), url('assets/img/imagem-padrao-para-cards.avif');">
+
+              <div class="details">
+                <a href="#" class="stretched-link">
+                  <h3>HUBs</h3>
+                  <h4>Centralize todas as integrações e ferramentas</h4>
+                </a>
               </div>
-              <h3>Solução para Farmácia</h3>
-              <p>Da prescrição digital à dispensação assistida: integração com prescritores, farmacêutico remoto sob demanda e rastreabilidade completa, do pedido até a entrega ao paciente.</p>
-              <a href="#" class="read-more">Explorar<i class="bi bi-arrow-right"></i></a>
-
             </div>
-          </div>
+          </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card">
-              <div class="icon-box">
-                <i class="bi bi-person-check"></i>
+          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="500">
+            <div class="service-item position-relative" style="background-image: linear-gradient(transparent 5%, #1e4356 70%), url('assets/img/imagem-padrao-para-cards.avif');">
+
+              <div class="details">
+                <a href="#" class="stretched-link">
+                  <h3>Automação com IA</h3>
+                  <h4>Agente inteligente para o seu atendimento e operacional</h4>
+                </a>
+
+                <a href="#" class="stretched-link"></a>
               </div>
-              <h3>Sistema de Admissão</h3>
-              <p>Digitalize o processo admissional de ponta a ponta, com controle de acesso por perfil e suporte a múltiplas unidades. Menos papel, menos retrabalho, RH mais ágil.</p>
-              <a href="#" class="read-more">Explorar<i class="bi bi-arrow-right"></i></a>
-
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card">
-              <div class="icon-box">
-                <i class="bi bi-receipt-cutoff"></i>
-              </div>
-              <h3>CRM de Faturamento</h3>
-              <p>Fechamento de faturamento centralizado, conciliação automática com parceiros e emissão de relatórios por cliente. Visibilidade total do financeiro, sem planilha paralela.</p>
-              <a href="#" class="read-more">Explorar<i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card">
-              <div class="icon-box">
-                <i class="bi bi-credit-card-2-front"></i>
-              </div>
-              <h3>CRM de Crédito</h3>
-              <p>Gestão do funil de crédito de ponta a ponta, com regras de negócio configuráveis e integração com os sistemas da sua operação. Decisão mais rápida, processo mais rastreável.</p>
-              <a href="#" class="read-more">Explorar<i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
+          </div><!-- End Service Item -->
 
         </div>
 
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- About-clients Section -->
+    <section id="about-clients" class="about-clients section light-background">
+
+      <div class="container">
+
+        <div class="row gy-4 justify-content-center align-items-center">
+          <div class="col-lg-6 position-relative align-self-start watch-youtube" data-aos="fade-up"
+            data-aos-delay="100">
+
+            <div class="swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 800,
+                  "autoplay": {
+                    "delay": 5000,
+                    "disableOnInteraction": false
+                  },
+                  "slidesPerView": 1,
+                  "spaceBetween": 30,
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  },
+                  "breakpoints": {
+                    "320": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 10
+                    },
+                    "480": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 20
+                    },
+                    "640": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 30
+                    }
+                  }
+                }
+              </script>
+
+              <div class="swiper-wrapper align-items-center">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                  <div class="col-lg-6 position-relative align-self-start watch-youtube" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+
+                  </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                  <div class="col-lg-6 position-relative align-self-start watch-youtube" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+                  </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                  <div class="col-lg-6 position-relative align-self-start watch-youtube" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-pagination"></div>
+            </div>
+            <script>
+              var swiper = new Swiper('.init-swiper', JSON.parse(document.querySelector('.swiper-config').textContent));
+            </script>
+
+          </div>
+          <div class="col-lg-6 p-4 content" data-aos="fade-up" data-aos-delay="200">
+            <!-- Section Title -->
+            <div class="container p-4 section-title" data-aos="fade-up">
+              <h2>#NOSSOS<strong>CLIENTES</strong></h2>
+              <h4>Inovação e consistência, transformando ideias em sistemas reais</h4>
+              <a href="#" class="btn-get-started">Nossas Soluções</a>
+            </div><!-- End Section Title -->
+          </div>
+        </div>
 
       </div>
 
     </section>
+    <!-- /About-clients Section -->
 
-    <!-- Consultation Section -->
-    <section id="consultation" class="consultation section light-background">
+    <!-- Blog Summary -->
+    <section id="blog-summary" class="blog-summary section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contato</h2>
-        <div><span>Fale Com</span> <span class="description-title">Nossa Equipe</span></div>
+        <h2>#NOSSOS<strong>CONTEÚDOS</strong></h2>
       </div>
       <!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="cta-wrapper">
-          <div class="row align-items-center">
-            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
-              <div class="cta-content">
-                <h2>Pronto para transformar seu negócio?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
-                  mattis, pulvinar dapibus leo. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="container">
 
+        <div class="row gy-4 justify-content-center align-items-center">
+          <div class="col-lg-6 position-relative align-self-start card-1" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+              <div class="col-md-6">
+                <h3>Como Sistemas sob Medida acabam com o caos das planilhas</h3>
+                <a href="#" class="btn-get-started">SAIBA MAIS</a>
               </div>
             </div>
-            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
-              <div class="cta-form">
-                <h3>Agende uma consulta gratuita</h3>
-                <p>Preencha o formulário abaixo e nossa equipe entrará em contato com você em até 24 horas.</p>
-                <form action="#" method="post" class="php-email-form">
-                  <div class="form-group">
-                    <input type="text" name="name" class="form-control" placeholder="Nome/Empresa*" required="">
-                  </div>
-                  <div class="form-group mt-3">
-                    <input type="email" class="form-control" name="email" placeholder="E-mail*" required="">
-                  </div>
-                  <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="phone" placeholder="Contato/WhatsApp (opcional)">
-                  </div>
-                  <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="assunto" placeholder="Assunto">
-                  </div>
-                  <div class="my-3">
-                    <div class="loading">Carregando...</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Sua mensagem foi enviada. Obrigado!</div>
-                  </div>
-                  <div class="text-center">
-                    <button type="submit">Enviar Agora</button>
-                  </div>
-                </form>
+
+          </div>
+          <div class="col-md-6">
+            <div class="row card-2">
+              <div>
+                <h3>Por que centralizar seus processos em um único Hub</h3>
+                <a href="#" class="btn-get-started">SAIBA MAIS</a>
+              </div>
+            </div>
+            <div class="row card-3">
+              <div>
+                <h3>Transformar seu sistema interno em produto SaaS</h3>
+                <a href="#" class="btn-get-started">SAIBA MAIS</a>
               </div>
             </div>
           </div>
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+
+
+          </div>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="blog-summary-item position-relative">
+
+              <div class="details">
+                <a href="#" class="stretched-link">
+                  <h3>Sistemas</h3>
+                  <h4>O que muda quando seu sistema é feito sob medida</h4>
+                </a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="blog-summary-item position-relative">
+
+              <div class="details">
+                <a href="#" class="stretched-link">
+                  <h3>Hubs</h3>
+                  <h4>Por que centralizar seus dados em um único Hub</h4>
+                </a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+            <div class="blog-summary-item position-relative">
+
+              <div class="details">
+                <a href="#" class="stretched-link">
+                  <h3>IA</h3>
+                  <h4>Já Não Existe Mais Um Mundo Sem IA. Como Está o Seu Mundo?</h4>
+                </a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="500">
+            <div class="blog-summary-item position-relative">
+
+              <div class="details">
+                <a href="#" class="stretched-link">
+                  <h3>SaaS</h3>
+                  <h4>Como transformar seu sistema interno em produto SaaS</h4>
+                </a>
+
+                <a href="#" class="stretched-link"></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- /Blog Summary Section -->
+
+    <section id="about-company" class="about-company section light-background">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 position-relative align-self-center">
+            <div class="container section-title" data-aos="fade-up">
+              <h2>#NOSSA<strong>EMPRESA</strong></h2>
+              <h3>Inovação e consistência, transformando ideias em resultados reais</h3>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam commodo libero non sodales vestibulum.
+              Curabitur tempor sodales velit vel congue. Mauris finibus in velit ac scelerisque. Vivamus cursus iaculis
+              turpis ut bibendum. Vivamus auctor eu erat in dapibus. Proin auctor non odio a congue. Pellentesque
+              laoreet iaculis leo, a sagittis purus tincidunt in.</p>
+            <p>Pellentesque blandit urna a justo facilisis viverra. Nullam semper turpis sed elit dictum malesuada quis
+              eu diam. Aenean ac risus ac eros aliquam pharetra. Phasellus cursus ex in ornare venenatis. Duis semper ac
+              turpis sed rutrum. Mauris luctus accumsan sapien, quis lobortis purus pharetra mollis.</p>
+            <p>Phasellus accumsan, dui ut interdum ultricies, arcu ante condimentum enim, id scelerisque nibh dolor quis
+              risus. Praesent semper at lorem ut efficitur. Etiam dapibus tincidunt odio, nec euismod urna convallis eu.
+              Ut congue nec purus sed iaculis. Etiam tempus eros elit, quis semper enim aliquet vel. </p>
+          </div>
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/img/about.jpg" alt="">
+          </div>
+
         </div>
       </div>
     </section>
-    <!-- /Consultation Section -->
+
+    <footer id="footer" class="footer dark-background">
+
+      <div class="footer-newsletter">
+        <div class="container">
+          <div class="row justify-content-center text-center">
+            <div class="col-lg-6">
+              <h4>Receba as melhores dicas direto no seu e-mail!</h4>
+              <p>Cadastre-se em nossa newsletter e fique por dentro das novidades e tendências!</p>
+              <form action="#" method="post" class="php-email-form">
+                <div class="newsletter-form"><input title="email" type="email" name="email" id="email"><input
+                    type="submit" value="Inscrever-se"></div>
+                <div class="loading">Carregando...</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Sua solicitação de assinatura foi enviada. Obrigado!</div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="d-flex align-items-center">
+              <img src="assets/img/logo.png" alt="" width="200">
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Avenida Paulista, 1234</p>
+              <p>São Paulo, SP - 01310-100</p>
+              <p><span>+55 (11) 12345-6789</span></p>
+              <hr>
+              <p>Rua Doutor Quirino, 567</p>
+              <p>Campinas, SP - 13015-021</p>
+              <p><span>+55 (19) 98765-4321</span></p>
+
+              <p class="mt-3"><span>contato@otmiztech.com.br</span></p>
+            </div>
+
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Links Úteis</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="solucoes.html">Soluções</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="nossa-agencia.html">Quem Somos</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Conteúdos</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="terms-of-service.html">Termos de Serviço</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Serviços</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Sistemas sob Medida</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Hubs &amp; Integrações</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Plataformas SaaS</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Automação com IA</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-12">
+            <h4>Siga-nos</h4>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <div class="social-links d-flex">
+              <a href="http://" target="_blank" rel="noopener noreferrer" title="facebook"><i
+                  class="bi bi-facebook"></i></a>
+              <a href="http://" target="_blank" rel="noopener noreferrer" title="instagram"><i
+                  class="bi bi-instagram"></i></a>
+              <a href="http://" target="_blank" rel="noopener noreferrer" title="linkedin"><i
+                  class="bi bi-linkedin"></i></a>
+              <a href="http://" target="_blank" rel="noopener noreferrer" title="youtube"><i
+                  class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">OtmizTech</strong> - <span>Todos os Direitos
+            Reservados</span></p>
+      </div>
+
+    </footer>
+
 
   </main>
 
-  <footer id="footer" class="footer light-background">
 
-    <div class="container">
-      <div class="row gy-3">
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-geo-alt icon"></i>
-          <div class="address">
-            <h4>Endereço</h4>
-            <a href="geo:0,0?q=R.%20Luiz%20Ot%C3%A1vio%2C%202565%20-%20Parque%20Taquaral%2C%20Campinas%20-%20SP%2C%2013087-018"
-              target="_blank" rel="noopener noreferrer">
-              <p>Escritório no Taquaral - Campinas</p>
-              <p>R. Luís Otávio, 2565 - 26 - Parque Taquaral</p>
-            </a>
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
-          </div>
-
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-telephone icon"></i>
-          <div>
-            <h4>Contatos</h4>
-            <p>
-              <strong>Contato:</strong>
-              <a href="https://wa.me/5519989105667" target="_blank" rel="noopener">
-                +55 19 9 8910-5667
-              </a><br>
-
-              <strong>E-mail:</strong>
-              <a href="mailto:contato@otmiztech.com.br">
-                contato@otmiztech.com.br
-              </a><br>
-            </p>
-
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-clock icon"></i>
-          <div>
-            <h4>Atendimento</h4>
-            <p>
-              Nosso horário de atendimento
-              é de segunda a sexta-feira,
-              das 9h às 18h.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <h4>Redes Sociais</h4>
-          <div class="social-links d-flex">
-            <a title="Link para Twitter" href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a title="Link para Facebook" href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a title="Link para Instagram" href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a title="Link para LinkedIn" href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <div class="credits">
-        Desenvolvido por <a href="https://devtowre.com.br/" target="_blank" rel="noopener noreferrer">devtower</a>
-      </div>
-    </div>
-
-  </footer>
-
+  <!-- Preloader -->
   <div id="preloader"></div>
 
+  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/pt.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+
   <script>
-    // --- 🎬 Modal de vídeo principal ---
-    const videoModal = document.getElementById('videoModal');
-    const videoPlayer = document.getElementById('videoPlayer');
+    document.addEventListener("DOMContentLoaded", function () {
+      var megaMenuLink = document.getElementById("navbarDropdown");
+      var megaMenu = document.getElementById("dropdownMenu");
 
-    videoModal.addEventListener('shown.bs.modal', () => {
-      videoPlayer.play();
-    });
+      // Inicialmente esconde o menu
+      megaMenu.style.display = "none";
 
-    videoModal.addEventListener('hidden.bs.modal', () => {
-      videoPlayer.pause();
-      videoPlayer.currentTime = 0;
-    });
+      megaMenuLink.addEventListener("click", function (event) {
+        event.preventDefault(); // Evita comportamento padrão do link
 
-
-    // --- 🚀 Quando o DOM estiver pronto ---
-    document.addEventListener("DOMContentLoaded", () => {
-      // ✅ 1. Carregar o vídeo de background o quanto antes
-      const bgVideo = document.getElementById('bgVideo');
-      const source = bgVideo.querySelector('source');
-
-      if (source.dataset.src) {
-        source.src = source.dataset.src;
-        bgVideo.load();
-        bgVideo.play().catch(() => {
-          // Autoplay pode falhar em alguns navegadores sem interação
-          console.log("Autoplay bloqueado — aguardando interação do usuário.");
-        });
-      }
-
-      // ✅ 2. Controlar o mini player flutuante
-      const heroSection = document.querySelector("#hero-teste");
-      const miniPlayer = document.querySelector("#miniPlayer");
-      const miniVideo = document.querySelector("#miniVideo");
-      const closeMiniPlayer = document.querySelector("#closeMiniPlayer");
-
-      let miniVisible = false;
-      let miniClosed = false; // evita reaparecer após fechar
-
-      function showMiniPlayer() {
-        miniPlayer.style.display = "block";
-        requestAnimationFrame(() => (miniPlayer.style.opacity = "1"));
-        miniVideo.play();
-        miniVisible = true;
-      }
-
-      function hideMiniPlayer() {
-        miniPlayer.style.opacity = "0";
-        setTimeout(() => (miniPlayer.style.display = "none"), 300);
-        miniVideo.pause();
-        miniVisible = false;
-      }
-
-      function handleScroll() {
-        const heroBottom = heroSection.getBoundingClientRect().bottom;
-
-        if (heroBottom < 0 && !miniVisible && !miniClosed) {
-          showMiniPlayer();
-        } else if (heroBottom >= 0 && miniVisible) {
-          hideMiniPlayer();
-
-          // Se o usuário voltar para o topo, libera o mini player novamente
-          if (heroBottom >= window.innerHeight * 0.8) {
-            miniClosed = false;
-          }
-        }
-      }
-
-      window.addEventListener("scroll", handleScroll);
-
-      // Botão "X" do mini player
-      closeMiniPlayer.addEventListener("click", () => {
-        hideMiniPlayer();
-        miniClosed = true;
-      });
-
-      // Sincronizar com o modal
-      videoModal.addEventListener("show.bs.modal", () => {
-        miniVideo.pause();
-      });
-
-      videoModal.addEventListener("hidden.bs.modal", () => {
-        videoPlayer.pause();
-        if (miniVisible) miniVideo.play();
-      });
-    });
-
-    // --- 📅 Offcanvas "Explorar" (Inovação > agendamento de apresentação) ---
-    const offcanvasExplorarEl = document.getElementById('offcanvasExplorar');
-    const offcanvasExplorar = offcanvasExplorarEl ? new bootstrap.Offcanvas(offcanvasExplorarEl) : null;
-    const explorarForm = document.getElementById('explorarForm');
-    const explorarSolucaoNome = document.getElementById('offcanvasSolucaoNome');
-    const explorarSolucaoInput = document.getElementById('explorarSolucaoInput');
-    const explorarDataHora = document.getElementById('explorarDataHora');
-    const explorarDataHoraError = document.getElementById('explorarDataHoraError');
-    let explorarFlatpickr = null;
-
-    document.querySelectorAll('.servicos .service-card .read-more').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (!offcanvasExplorar) return;
-        const card = link.closest('.service-card');
-        const nome = card ? card.querySelector('h3').textContent.trim() : '';
-        explorarSolucaoNome.textContent = nome;
-        explorarSolucaoInput.value = nome;
-        offcanvasExplorar.show();
-      });
-    });
-
-    if (offcanvasExplorarEl) {
-      offcanvasExplorarEl.addEventListener('shown.bs.offcanvas', () => {
-        if (!explorarFlatpickr) {
-          explorarFlatpickr = flatpickr('#explorarCalendar', {
-            inline: true,
-            enableTime: true,
-            time_24hr: true,
-            minDate: 'today',
-            minTime: '09:00',
-            maxTime: '18:00',
-            locale: 'pt',
-            dateFormat: 'd/m/Y H:i',
-            onChange: (selectedDates, dateStr) => {
-              explorarDataHora.value = dateStr;
-              explorarDataHoraError.classList.add('d-none');
-            }
-          });
+        if (megaMenu.style.display === "none" || megaMenu.style.opacity === "0") {
+          abrirMegaMenu();
+        } else {
+          fecharMegaMenu();
         }
       });
 
-      offcanvasExplorarEl.addEventListener('hidden.bs.offcanvas', () => {
-        explorarForm.reset();
-        explorarDataHora.value = '';
-        explorarDataHoraError.classList.add('d-none');
-        if (explorarFlatpickr) explorarFlatpickr.clear();
-      });
-    }
-
-    if (explorarForm) {
-      explorarForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        if (!explorarForm.checkValidity()) {
-          explorarForm.reportValidity();
-          return;
+      // Fecha o menu ao clicar fora dele
+      document.addEventListener("click", function (event) {
+        if (!megaMenu.contains(event.target) && !megaMenuLink.contains(event.target)) {
+          fecharMegaMenu();
         }
-
-        if (!explorarDataHora.value) {
-          explorarDataHoraError.classList.remove('d-none');
-          return;
-        }
-
-        const solucao = explorarSolucaoInput.value;
-        offcanvasExplorar.hide();
-
-        Swal.fire({
-          icon: 'success',
-          title: 'Apresentação agendada!',
-          html: `Recebemos seu pedido para <strong>${solucao}</strong>.<br>Nossa equipe vai confirmar o horário por e-mail em breve.`,
-          confirmButtonColor: '#544bb5'
-        });
       });
-    }
+
+      function abrirMegaMenu() {
+        megaMenu.style.display = "block";
+        megaMenu.style.opacity = "0";
+        megaMenu.style.transform = "translateY(-10px)";
+        setTimeout(() => {
+          megaMenu.style.opacity = "1";
+          megaMenu.style.transform = "translateY(0)";
+          megaMenu.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+        }, 10);
+      }
+
+      function fecharMegaMenu() {
+        megaMenu.style.opacity = "0";
+        megaMenu.style.transform = "translateY(-10px)";
+        setTimeout(() => {
+          megaMenu.style.display = "none";
+        }, 300); // Tempo igual à animação
+      }
+    });
   </script>
+
 
 </body>
 
