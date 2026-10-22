@@ -1,8 +1,7 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.5-fpm-alpine
 WORKDIR /var/www/html
 RUN apk add --no-cache nginx supervisor curl oniguruma-dev \
-    && docker-php-ext-install pdo mbstring \
-    && docker-php-ext-enable opcache
+    && docker-php-ext-install mbstring
 COPY . .
 RUN mkdir -p /run/nginx \
     && chmod -R 755 /var/www/html
